@@ -1,4 +1,4 @@
-package com.ko.weaverloft.Service;
+package com.ko.weaverloft.service;
 
 import com.ko.weaverloft.dto.DownloadFilesDTO;
 import com.ko.weaverloft.dto.DownloadFilesResponse;
@@ -10,8 +10,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.Buffer;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;

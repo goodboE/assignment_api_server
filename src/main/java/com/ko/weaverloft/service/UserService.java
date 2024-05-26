@@ -1,9 +1,8 @@
-package com.ko.weaverloft.Service;
+package com.ko.weaverloft.service;
 
-import com.ko.weaverloft.Repository.UserRepository;
+import com.ko.weaverloft.repository.UserRepository;
 import com.ko.weaverloft.entity.User;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 import org.springframework.stereotype.Service;
 
 @Service

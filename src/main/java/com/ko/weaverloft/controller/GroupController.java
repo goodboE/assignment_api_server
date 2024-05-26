@@ -1,9 +1,9 @@
 package com.ko.weaverloft.controller;
 
 
-import com.ko.weaverloft.Service.DownloadService;
-import com.ko.weaverloft.Service.ScrapingService;
-import com.ko.weaverloft.Service.UserService;
+import com.ko.weaverloft.service.DownloadService;
+import com.ko.weaverloft.service.ScrapingService;
+import com.ko.weaverloft.service.UserService;
 import com.ko.weaverloft.dto.*;
 import com.ko.weaverloft.entity.User;
 import lombok.RequiredArgsConstructor;

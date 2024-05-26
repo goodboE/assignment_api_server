@@ -1,4 +1,4 @@
-package com.ko.weaverloft.Repository;
+package com.ko.weaverloft.repository;
 
 import com.ko.weaverloft.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

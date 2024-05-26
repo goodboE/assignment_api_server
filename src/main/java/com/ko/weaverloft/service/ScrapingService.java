@@ -1,4 +1,4 @@
-package com.ko.weaverloft.Service;
+package com.ko.weaverloft.service;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
