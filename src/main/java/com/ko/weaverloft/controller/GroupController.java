@@ -1,24 +1,27 @@
 package com.ko.weaverloft.controller;
 
 
+import com.ko.weaverloft.Service.DownloadService;
+import com.ko.weaverloft.Service.ScrapingService;
 import com.ko.weaverloft.Service.UserService;
-import com.ko.weaverloft.dto.EmailValidateDTO;
-import com.ko.weaverloft.dto.UserDTO;
-import com.ko.weaverloft.dto.UserParsingDTO;
+import com.ko.weaverloft.dto.*;
 import com.ko.weaverloft.entity.User;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.ExecutionException;
+
 @RestController
 @RequiredArgsConstructor
 public class GroupController {
 
     private final UserService userService;
+    private final DownloadService downloadService;
+    private final ScrapingService scrapingService;
 
     /**
      * [Group 1-1] 1. REST API 호출 및 응답
@@ -48,6 +51,20 @@ public class GroupController {
         return "Name: " + user.getName() + ", " + "Age: " + user.getAge();
     }
 
+    /**
+     * [Group 2-1] 1. 멀티스레딩을 이용한 파일 다운로드
+     */
+    @PostMapping("/api/download")
+    public ResponseEntity downloadFiles(@RequestBody DownloadFilesDTO downloadFilesDTO) throws ExecutionException, InterruptedException {
+        return ResponseEntity.ok(downloadService.downloadStart(downloadFilesDTO));
+    }
 
+    /**
+     * [Group 2-2] 3. 웹 페이지 스크래핑 및 데이터 추출
+     */
+    @GetMapping("/api/scraping")
+    public ResponseEntity extractLinks(@RequestBody UrlDTO urlDTO) {
+        return ResponseEntity.ok(scrapingService.extractLinks(urlDTO.getUrl()));
+    }
 
 }
