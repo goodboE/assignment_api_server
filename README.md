@@ -11,7 +11,7 @@
 
 ## 구현 결과
 GroupController에 모든 API가 구현되어 있습니다.
-<br>
+<br><br>
 
 ### 1-1 REST API 호출 및 응답
 * userId가 1인 User의 userId와 title을 출력합니다.
