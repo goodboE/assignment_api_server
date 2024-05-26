@@ -110,7 +110,7 @@ POST "/api/download"
 <br>
 
 ### 2-2 웹 페이지 스크래핑 및 데이터 추출
-* 주어진 URL의 모든 링크 추출
+* Jsoup 라이브러리를 사용해서 주어진 URL의 모든 링크 추출
 #### REQUEST
 ```json
 GET "/api/scraping"
