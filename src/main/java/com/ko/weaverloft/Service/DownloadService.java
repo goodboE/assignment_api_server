@@ -31,12 +31,9 @@ public class DownloadService {
 
         @Override
         public String call() throws Exception {
-            LocalTime startTime = LocalTime.now();
 
             // file download logic
             String fileSize = downloadFile(fileLink, "C:\\Users\\ko\\Desktop\\fileoutputstream", "downloadedFile" + idx++);
-
-            LocalTime endTime = LocalTime.now();
 
             return "스레드: " + Thread.currentThread().getName() + " 파일 크기: " + fileSize;
         }
